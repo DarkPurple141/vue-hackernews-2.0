@@ -10,8 +10,8 @@ import * as filters from './util/filters'
 Vue.mixin(titleMixin)
 
 // register global utility filters.
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
+Object.entries(filters).forEach([key, filter] => {
+  Vue.filter(key, filter)
 })
 
 // Expose a factory function that creates a fresh set of store, router,
